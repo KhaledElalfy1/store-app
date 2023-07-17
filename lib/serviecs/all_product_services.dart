@@ -8,13 +8,18 @@ class AllProductsServices{
 
   Future<List<ProductModel>> getAllProducts()
   async {
-    List<dynamic> data=await ApiServices().get(url: 'https://fakestoreapi.com/products');
+    dynamic data=await ApiServices().get(url: 'https://fakestoreapi.com/products');
 
         List<ProductModel> productList=[];
-        for(int i=0; i<data.length;i++)
+
+
+
+    for(int i=0; i<data.length;i++)
           {
-            productList.add(data[i]);
+
+            productList.add(ProductModel.fromjson(data[i]));
           }
+
 
         return productList;
       }

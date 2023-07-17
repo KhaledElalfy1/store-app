@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
           future: AllProductsServices().getAllProducts(),
           builder: (context,snapshot){
             if (snapshot.hasData) {
+
               return GridView.builder(
                   clipBehavior: Clip.none,
                   gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
@@ -39,13 +40,12 @@ class HomePage extends StatelessWidget {
                   ) ,
 
                   itemBuilder: (context,index){
-                    return CustomStack();
+                    return CustomStack(product:snapshot.data![index]);
                   }
               );
             }
             else
               {
-                  print(AllProductsServices().getAllProducts()==null);
                 return Center(child: CircularProgressIndicator());
               }
 

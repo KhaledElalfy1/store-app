@@ -28,7 +28,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
       inAsyncCall:isLoading ,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Update Product',
+          title: const Text('Update Product',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.transparent,
@@ -40,31 +40,31 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 100,),
+                const SizedBox(height: 100,),
 
                 CustomTextFiled(hintText: 'Update product name',
                   onChange: (data){
                   productName=data;
                   },
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 CustomTextFiled(hintText: 'description',
                   onChange: (data){
                   des=data;
                   },
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 CustomTextFiled(hintText: 'price',inputType: TextInputType.number,
                   onChange: (data){
                   price=data;
                   },
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 CustomTextFiled(hintText: 'image',
                   onChange: (data){
                     image=data;
                   },),
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
                 CustomButton(text: 'Update',
                   onTap: () async {
                     isLoading=true;

@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
           future: AllProductsServices().getAllProducts(),
           builder: (context,snapshot){
             if (snapshot.hasData) {
-
               return GridView.builder(
+                itemCount:snapshot.data!.length,
                   clipBehavior: Clip.none,
                   gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount:2,
